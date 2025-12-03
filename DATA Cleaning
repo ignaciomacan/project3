@@ -1,0 +1,16 @@
+### Data Cleaning and Transformation Summary
+
+| Variable | Description | Cleaning / Processing Method | Transformation Applied (In Code) |
+| :--- | :--- | :--- | :--- |
+| **R** | Recession Indicator | • Replaced `.` values with `NaN`<br>• Filtered to sample window (1963Q1–2018Q2) | N/A |
+| **CGDP** | Credit-to-GDP Ratio | • Replaced `.` values with `NaN`<br>• Filtered to sample window | A `.diff` transformation is applied for a first difference transformation (Δ) to this variable that was not stationary) |
+| **CPIR** | Inflation Rate | • Replaced `.` values with `NaN`<br>• **Aggregation:** Resampled Monthly data to Quarterly Mean | **Percentage Change**<br>Calculated as the percentage change from the previous quarter multiplied by 100. |
+| **INVR** | Investment Growth | • Replaced `.` values with `NaN`<br>• Filtered to sample window | **Percentage Growth Rate**<br>Calculated as: $100 \times (\frac{Value_t}{Value_{t-1}} - 1)$ |
+| **HP** | House Prices | • Replaced `.` values with `NaN`<br>• Filtered to sample window | **Log Difference**<br>Calculated as: $100 \times (\ln(HP_t) - \ln(HP_{t-1}))$<br>(Code saves this as `dHP_log`, loader renames it to `HP`).<br> Additionally, a `.diff` transformation is applied for a first difference transformation (Δ) to this variable that was not stationary|
+| **IR** | Real Interest Rate | • Replaced `.` values with `NaN`<br>• Merged Nominal T-Bill rate with calculated CPIR | A `.diff` transformation is applied for a first difference transformation (Δ) to this variable that was not stationary|
+| **ROP** | Profit Rate | • Replaced `.` values with `NaN`<br>• Filtered to sample window | N/A |
+| **IROR** | Incremental Rate of Profit | • Replaced `.` values with `NaN`<br>• Merged Profits, Investment, and GDP Deflator series | Multiplied base data by 1,000,000 |
+| **LSOI** | Labour's Share of Income | • Replaced `.` values with `NaN`<br>• Filtered to sample window | A `.diff` transformation is applied for a first difference transformation (Δ) to this variable that was not stationary)|
+| **RGDP** | Real GDP | • Replaced `.` values with `NaN`<br>• Filtered to sample window | **Percentage Growth Rate**<br>Calculated as: $100 \times (\frac{GDP_t}{GDP_{t-1}} - 1)$<br>*(Loader keeps the `RGDP_growth` column)* |
+| **MA** | Manufacturing PMI | • **Date Parsing:** Converted text dates (e.g., in `Quarter` column) to standard Quarterly PeriodIndex (`Q-DEC`) | N/A |
+| **TOBQ** | Tobin’s Q | • **Date Parsing:** Converted text dates to standard Quarterly PeriodIndex (`Q-DEC`) | N/A |
