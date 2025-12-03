@@ -1,0 +1,16 @@
+MARKDOWN CODE FOR DATA SOURCE LINKS AND FRED CODES
+### FRED Source Series IDs
+
+| Variable | Description | FRED Series ID | FRED Website or other |
+| :--- | :--- | :--- | :--- |
+| **R** | NBER Recession Indicator | `USRECQ` | FRED - https://fred.stlouisfed.org/series/USRECQ |
+| **CGDP** | Credit-to-GDP Ratio | `QUSPAM770A` | FRED - https://fred.stlouisfed.org/series/QUSPAM770A|
+| **CPIR** | Consumer Price Index | `CPIAUCSL` | FRED - https://fred.stlouisfed.org/series/CPIAUCSL|
+| **MA** | Purchasing Managers Index — Manufacturing | N/A | Institute for Supply Management (ISM) |
+| **INVR** | Gross Fixed Capital Formation | `B009RC1Q027SBEA` | FRED - https://fred.stlouisfed.org/series/B009RC1Q027SBEA |
+| **HP** | House Prices | `QUSR628BIS` |FRED - https://fred.stlouisfed.org/series/QUSR628BIS|
+| **IR** | Interest Rate (Real) | `TB3MS` (Nominal) - `CPIAUCSL` (inflation) |FRED - CPIAUCSL - https://fred.stlouisfed.org/series/CPIAUCSL TB3MS - https://fred.stlouisfed.org/series/TB3MS|
+| **ROP** | Profit Rate (Net Operating Surplus) | `A445RC1Q027SBEA` | FRED - https://fred.stlouisfed.org/series/A445RC1Q027SBEA|
+| **LSOI** | Labour's Share of Income | `PRS85006173` | FRED - https://fred.stlouisfed.org/series/PRS85006173|
+| **TOBQ** | Tobin’s Q | N/A | YCharts — https://ycharts.com/indicators/tobins_q | 
+| **RGDP** | Real GDP Growth | `GDPC1` | FRED - https://fred.stlouisfed.org/series/GDPC1|
