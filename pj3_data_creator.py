@@ -18,7 +18,7 @@ from fredapi import Fred
 # ============================================================
 
 # Insert your real API key here
-FRED_API_KEY = "YOUR API KEY HERE"
+FRED_API_KEY = "3707355de3032aa9b43716f690e0cf29"
 
 data_dir = Path(r"C:\Users\Ignacio\projects\ucla\fall25\econometrics\project3\data")
 data_dir.mkdir(parents=True, exist_ok=True)
@@ -189,23 +189,20 @@ ir_df.to_csv(out_path)
 print("Saved IR (nominal, CPIR, real) to:", out_path)
 
 
+
 # ============================================================
-# 7. ROP – Profit rate (net operating surplus / capital)
-#     W326RC1Q027SBEA, TTAABSNNCB
+# 7. ROP – Corporate Profits (using BEA series)
+#     B471RC1Q027SBEA
 # ============================================================
 
-profits_df = fetch_fred_series("W326RC1Q027SBEA")   # net operating surplus, NFCB
-profits_df = profits_df.rename(columns={"value": "profits"})
-
-capital_df = fetch_fred_series("TTAABSNNCB")        # nonfinancial assets, NFCB
-capital_df = capital_df.rename(columns={"value": "capital"})
-
-rop_df = profits_df.join(capital_df, how="inner")
-rop_df["ROP"] = 100.0 * rop_df["profits"] / rop_df["capital"]
+# Fetch BEA corporate profits (after tax, IVA, CCAdj)
+rop_df = fetch_fred_series("B471RC1Q027SBEA")
+rop_df = rop_df.rename(columns={"value": "ROP"})   # keep original naming convention
 
 out_path = data_dir / "ROP_quarterly.csv"
 rop_df.to_csv(out_path)
 print("Saved ROP to:", out_path)
+
 
 
 # ============================================================
