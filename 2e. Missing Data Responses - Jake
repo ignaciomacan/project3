@@ -1,0 +1,13 @@
+In replicating the dataset, we encountered several instances of missing or restricted data. We handled these limitations as follows, attempting to remain as consistent as possible with the methodology in Alexiou and Trachanas (2020):
+
+**Truncated Historical Data (House Prices):** While the original study specifies a sample period starting in 1963Q1 , the public series for Residential House Prices (HP) from the Bank of International Settlements (BIS)  was only retrievable dating back to 1970Q3. This limitation results in a loss of approximately 6 years (24 quarters) of observations for any model specifications involving the HP variable. For these specific models, we restricted our estimation window to start in 1970Q3, acknowledging this deviation from the authors' full timeframe.
+
+**Ambiguity in FRED Series Identifiers:*** The original paper describes variables sourced from the Federal Reserve Economic Data (FRED) but does not provide specific Series IDs. We dealt with this ambiguity by selecting the series that best matched the authors' textual descriptions (e.g., matching "Net Operating Surplus" to FRED series A445RC1Q027SBEA). While our descriptive statistics largely align with the original paper, minor variations may persist due to data revisions by the source agencies or differences in the specific vintage of data used.
+
+**Manual Data Extraction (Proprietary Sources):** Data for the Purchasing Managers Index (MA) and Tobin’s Q (TOBQ) are not available via standard public repositories like FRED. Consistent with the authors' sources, we manually retrieved these values from YCharts. We acknowledge that manually scraping this data introduces potential reliability concerns and measurement errors compared to the direct institutional access the authors likely utilized. Furthermore, we followed the authors' note regarding Tobin's Q, which had limited availability compared to the full sample.
+
+
+**Reconstruction of IROR (Unit Scaling Adjustment):** The "Incremental Rate of Profit" (IROR) is an author-calculated variable  and was not attainable as a direct download. We reconstructed this variable using the formula provided in the paper (Equation 3): the change in real profits divided by lagged real investment.
+
+
+**Handling:** Upon initial calculation, our derived values differed in magnitude from the authors' reported summary statistics, likely due to differences in unit reporting (e.g., Billions of Dollars vs. raw units). To resolve this and match the authors' variable scale, we applied a scaling factor ($10^6$) to our calculated IROR series. This unconventional adjustment successfully aligned our reconstructed variable with the distribution reported in the original study.
