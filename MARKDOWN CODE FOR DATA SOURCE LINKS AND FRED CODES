@@ -1,4 +1,34 @@
 MARKDOWN CODE FOR DATA SOURCE LINKS AND FRED CODES
+
+| **Variable** | **Description** | **Source** |
+|--------------|-----------------|------------|
+| **R** | Binary recession indicator series | National Bureau of Economic Research — https://www.nber.org/cycles/cyclesmain.html and Federal Reserve Economic Data (FRED): https://fred.stlouisfed.org/series/USRECPQ#0 |
+| **CGDP** | Credit-to-GDP ratio (total credit to private non-financial sector, % GDP) | Federal Reserve Economic Data of the Federal Reserve Bank of St. Louis web: https://fred.stlouisfed.org/series/QUSPAM770A |
+| **CPIR** | Consumer price index ratio | Consumer Price Index for All Urban Consumers (CPIAUCSL), monthly series from the Federal Reserve Bank of St. Louis (FRED), aggregated to quarterly frequency and converted to quarterly inflation rates. | inflation_q |
+| **MA** | Purchasing Managers Index — Manufacturing | Institute for Supply Management (ISM) |
+| **INVR** | Gross fixed capital formation growth rate (nonfinancial corporate business; gross fixed capital formation with equity REIT residential structures) | Federal Reserve Economic Data of the Federal Reserve Bank of St. Louis |
+| **HP** | Residential house prices index (new 1-family houses, per dwelling) | Bank of International Settlements (FRED hosts the BIS data. Series: "Real Residential Property Prices for United States")|  
+| **IR** | Interest rate (real) | Federal Reserve Economic Data of the Federal Reserve Bank of St. Louis |  
+| **ROP** | Profit rate (nonfinancial corporations’ sector) | Federal Reserve Economic Data of the Federal Reserve Bank of St. Louis |  
+| **IROR** | Incremental rate of profit per unit of investment | Authors’ calculations |  
+| **LSOI** | Labour’s share of income (nonfarm business sector) | Federal Reserve Economic Data of the Federal Reserve Bank of St. Louis |  
+| **TOBQ** | Tobin’s Q | YCharts — https://ycharts.com/indicators/tobins_q | 
+| **RGDP** | Real gross domestic product growth | Federal Reserve Economic Data of the Federal Reserve Bank of St. Louis |  
+
+**Note:** The sample period for all variables is 1963Q1–2018Q2, except for Tobin’s Q, where data were available for 1963Q1–2017Q4.
+
+**Manufacturing PMI (MA):**
+
+- Source: Institute for Supply Management (ISM).
+
+- This data is NOT available on FRED (it is proprietary).
+
+**Tobin's Q (TOBQ):**
+
+- Source: YCharts.
+
+- This data is NOT available on FRED
+
 ### FRED Source Series IDs
 
 | Variable | Description | FRED Series ID | FRED Website or other |
@@ -14,3 +44,5 @@ MARKDOWN CODE FOR DATA SOURCE LINKS AND FRED CODES
 | **LSOI** | Labour's Share of Income | `PRS85006173` | FRED - https://fred.stlouisfed.org/series/PRS85006173|
 | **TOBQ** | Tobin’s Q | N/A | YCharts — https://ycharts.com/indicators/tobins_q | 
 | **RGDP** | Real GDP Growth | `GDPC1` | FRED - https://fred.stlouisfed.org/series/GDPC1|
+
+
